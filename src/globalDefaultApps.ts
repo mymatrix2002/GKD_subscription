@@ -74,6 +74,7 @@ export const blackListAppIDs: string[] = [
   'com.openai.chatgpt', // ChatGPT
   'org.telegram.group', // Turrit
   'com.android.chrome', // Chrome
+  'com.microsoft.emmx', // Edge
   'org.mozilla.firefox', // Firefox
   'org.mozilla.firefox_beta', // Firefox Beta
   'org.mozilla.fenix', // Firefox Nightly
@@ -175,6 +176,7 @@ export const blackListAppIDs: string[] = [
   'com.twifucker.hachidori', // Hachidori
   'me.neko.fckvip', // Fuck for VIP
   'gr.nikolasspyr.integritycheck', // Play Integrity API Checker
+  'com.luckyzyx.luckytool', // 全局规则误触 https://i.gkd.li/i/21339859
 
   'com.canghai.haoka',
   'com.xy.td',

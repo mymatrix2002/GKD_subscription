@@ -107,7 +107,18 @@ export default defineGkdApp({
           snapshotUrls: 'https://i.gkd.li/i/21152960',
         },
         {
-          preKeys: [0, 1, 2, 3, 4, 5],
+          key: 6,
+          matches:
+            'DetachableComposeView >2 ScrollView > View[childCount=4][visibleToUser=true] > View + TextView[childCount=1][text!=null][getChild(0).width<120][getChild(0).height<80] + View[childCount=1][getChild(0).text!=null] + View[clickable=true][childCount=0]',
+          exampleUrls: 'https://e.gkd.li/e4e6aca1-e7cb-4346-980b-638f26f61864',
+          snapshotUrls: [
+            'https://i.gkd.li/i/21379340',
+            'https://i.gkd.li/i/21410460',
+            'https://i.gkd.li/i/21410716',
+          ],
+        },
+        {
+          preKeys: [0, 1, 2, 3, 4, 5, 6],
           key: 50,
           fastQuery: true,
           matches: '[text="直接关闭"][visibleToUser=true]',
@@ -285,11 +296,17 @@ export default defineGkdApp({
         {
           key: 1,
           fastQuery: true,
-          activityIds: '.ona.activity.SplashHomeActivity',
+          activityIds: [
+            '.ona.activity.SplashHomeActivity',
+            '.ona.activity.origin.OriginIconHomeActivity',
+          ],
           matches:
-            '@ImageView[childCount=0][clickable=true][visibleToUser=true][width<250 && height<150] <3 RelativeLayout < FrameLayout <2 FrameLayout < FrameLayout <2 ViewGroup < FrameLayout < FrameLayout < FrameLayout < FrameLayout < FrameLayout <5 [id="android:id/content"]',
+            '@ImageView[childCount=0][clickable=true][visibleToUser=true][width<250 && height<150] <3 RelativeLayout < FrameLayout <2 FrameLayout < FrameLayout <2 ViewGroup < FrameLayout < FrameLayout < FrameLayout < FrameLayout < FrameLayout <(4,5) [id="android:id/content"]',
           exampleUrls: 'https://e.gkd.li/0ea465ad-e4e4-4af5-92a4-2d71e44845f4',
-          snapshotUrls: 'https://i.gkd.li/i/19667104',
+          snapshotUrls: [
+            'https://i.gkd.li/i/19667104',
+            'https://i.gkd.li/i/21327634',
+          ],
         },
       ],
     },

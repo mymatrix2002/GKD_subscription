@@ -17,11 +17,12 @@ export default defineGkdApp({
           key: 1,
           fastQuery: true,
           matches:
-            '@ImageView[childCount=0][clickable=true][visibleToUser=true] - LinearLayout >(2,3) [text="广告" || text="立享优惠" || text*="查看"][text.length<5]',
+            '@ImageView[childCount=0][clickable=true][visibleToUser=true] - LinearLayout >(2,3) [text="广告" || text="立享优惠" || text*="查看" || text^="立即"][text.length<5]',
           snapshotUrls: [
             'https://i.gkd.li/i/12908734',
             'https://i.gkd.li/i/14540281',
             'https://i.gkd.li/i/18138903',
+            'https://i.gkd.li/i/21623147',
           ],
         },
         {
@@ -216,14 +217,24 @@ export default defineGkdApp({
       key: 10,
       name: '权限提示-通知权限',
       desc: '点击"取消"',
+      fastQuery: true,
       matchTime: 10000,
       actionMaximum: 1,
       resetMatch: 'app',
       rules: [
         {
-          activityIds: '.widget.ConfirmDialogBuilder',
-          matches: '@[text="取消"] < * -2 * > [text="开启推送提醒"]',
-          snapshotUrls: 'https://i.gkd.li/i/12716592',
+          activityIds: [
+            '.widget.ConfirmDialogBuilder',
+            '.pages.main.MainFragmentActivity',
+          ],
+          matches: [
+            '[text="开启推送提醒"][visibleToUser=true]',
+            '[text="取消"][visibleToUser=true]',
+          ],
+          snapshotUrls: [
+            'https://i.gkd.li/i/12716592',
+            'https://i.gkd.li/i/21589667',
+          ],
         },
       ],
     },
@@ -284,6 +295,20 @@ export default defineGkdApp({
             '@LynxFlattenUI[clickable=true] -2 [text="获得听书时长"] -n FlattenUIText[text="广告"]',
           exampleUrls: 'https://e.gkd.li/8f6a6b4b-b189-48b8-a068-d66514b244e3',
           snapshotUrls: 'https://i.gkd.li/i/20989165',
+        },
+      ],
+    },
+    {
+      key: 17,
+      name: '评价提示-点评此书弹窗',
+      desc: '点击[取消]',
+      actionMaximum: 1,
+      resetMatch: 'app',
+      rules: [
+        {
+          activityIds: '.reader.ui.ReaderActivity',
+          matches: ['[text="点评此书"]', '[text="取消"][clickable=true]'],
+          snapshotUrls: 'https://i.gkd.li/i/21589381',
         },
       ],
     },
